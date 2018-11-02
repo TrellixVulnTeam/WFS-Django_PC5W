@@ -1,0 +1,55 @@
+{% extends 'template.html' %}
+
+{%block title%}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="row">
+<img src="/media/login-image.jpg" class="login-image">
+  <div class="col-sm-4 card1">
+    <div class="card">
+      <div class="card-body">
+        <form method="POST" class="form-1">
+			{% csrf_token %}
+				<legend class="mb-4">
+					<img src="/media/wfs-login.png" class="wfs-login-img">
+				</legend>
+				{{ form.as_p }}
+			<div class="form-group">
+				<button type="submit" class="btn btn login-button">Login</button>
+			</div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+	.container {
+		margin-left: 750px;
+		margin-top: 50px;
+	}
+
+	.login-image {
+		width: 850px;
+	}
+
+	.form-1 {
+		margin-left: 20px;
+	}
+	.card1 {
+		margin-left: -15px;
+	}
+
+	.login-button {
+		background: #393244 !important;
+		color: white;
+	}
+
+	.wfs-login-img {
+		margin-left: 100px;
+	}
+
+</style>
+{% endblock %}

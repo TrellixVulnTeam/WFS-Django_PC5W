@@ -1,0 +1,41 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}
+CART
+{% endblock %}
+
+{% block content %}
+<!-- 
+{{ shareit }}
+{{ sharenow }} -->
+
+{% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+<div class="card-group">
+{% for object in product %}
+  <div class="card col-4">
+    <img class="card-img-top" src="{{ object.image.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ object.name }}</h5>
+      <p class="card-text">{{ object.price }}</p>
+      <p class="card-text">{{ object.quantity }}</p>
+  </div>
+{% endfor %}
+</div>
+
+<style>
+.button-add {
+	color: black !important;
+}
+.button-add {
+	background: green !important;
+}
+</style>
+{% endblock %}

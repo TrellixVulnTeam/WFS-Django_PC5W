@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+
+{%block title%}
+REGISTER
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">REGISTER NOW!</legend>
+				{{ form.as_p }}
+			</fieldset>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Sign Up</button>
+			</div>
+		</form>
+
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" id="card1">
+      <div class="card-body" id="card-body-area">
+			<img src="{{ user.profile.image.url }}" class="rounded-circle article-img" id="post-image">
+			<p class="post-my-name">{{ user.username }}</p>
+			<table class="totals">
+				<tr>
+					<th class="total-th" id="thoughts-post">Total Thoughts Posted&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+					<th class="total-th" id="points-earned">Total Points Earned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+					<th class="total-th" id="bonus-reward">Total Bonus Rewards</th>
+				</tr>
+				<tr>
+					<td id="td1">{{ post.num_of_posts }}</td>
+					<td id="td2">0</td>
+					<td id="td3">0</td>
+				</tr>
+			</table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+	<div class="content">
+		<form method="POST" class="form-group-main">
+			{% csrf_token %}
+			<fieldset class="form-group" id="content-form">
+				<legend class="border-bottom mb-4">Share your thoughts</legend>
+				{{ form.content }}
+			</fieldset>
+			<div class="form-group">
+				<button type="submit" class="btn btn post-btn">Post</button>
+			</div>
+		</form>
+	</div>
+  </div>
+</div>
+
+		
+<style>	
+ .content {
+ 	width: 500px;
+ 	border: 1px solid gray;
+ 	box-shadow: 2px 3px 3px gray;
+ 	margin-left: 0px;
+ 	margin-top: 40px;
+ }
+
+.post-btn {
+	background: #393244;
+	color: white;
+	margin-left: 400px;
+}
+
+.form-group-main {
+	margin-left: 30px;
+}
+
+#post-image {
+	width: 10%;
+	margin-left: 240px;
+}
+
+.post-my-name {
+	margin-left: 230px;
+}
+
+.post_form_container {
+	margin-top: 10px;
+	margin-left: 500px;
+}
+
+#card1 {
+	margin-top: 40px;
+	box-shadow: 2px 3px 3px gray;
+	margin-left: 10px;
+}
+
+#thoughts-post {
+	color: #005e0f !important;
+}
+
+#points-earned {
+	color: #f44265 !important;
+}
+
+#bonus-reward {
+	color: #4286f4 !important;
+}
+
+#card-body-area {
+	margin-left: 10px;
+}
+
+#td1, #td2, #td3 {
+	text-align: center;
+}
+
+
+</style>
+
+{% endblock %}

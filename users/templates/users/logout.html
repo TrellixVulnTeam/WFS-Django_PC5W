@@ -1,0 +1,78 @@
+{% extends 'template.html' %}
+
+{%block title%}
+Logout
+{% endblock %}
+
+{% block content %}
+<div class="row">
+<img src="/media/login-image.jpg" class="login-image">
+  <div class="col-sm-4 card1">
+    <div class="card">
+      <div class="card-body">
+      	<legend class="mb-4">
+				<img src="/media/wfs-login.png">
+		</legend>
+				<a href="{% url 'login' %}" class="login-again">Click here to login again.</a>
+			<div class="form-group">
+			</div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+	.login-again {
+		color: #393244;
+		text-decoration: inherit;
+	}
+
+	.container {
+		margin-left: 750px;
+		margin-top: 50px;
+	}
+
+	.login-image {
+		width: 850px;
+	}
+
+	.form-1 {
+		margin-left: 20px;
+	}
+	.card1 {
+		margin-left: -15px;
+	}
+
+	.login-button {
+		background: #393244 !important;
+		color: white;
+	}
+
+	 .logo1 {
+    width: 30px;
+    height: 40px;
+    background: #581845;
+    border-radius: 5px;
+  }
+  .logo2 {
+    width: 20px;
+    height: 40px;
+    background: #900C3F;
+  }
+  .logo3 {
+    width: 20px;
+    height: 40px;
+    background: #C70039;
+    border-radius: 1px;
+  }
+
+  .wfs {
+    color: white;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+</style>
+{% endblock %}
